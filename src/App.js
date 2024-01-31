@@ -1,11 +1,22 @@
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Home from "./components/Home";
+import DetailPage from "./components/DetailPage";
 
 function App() {
-  // fetch("https://api.tvmaze.com/search/shows?q=all")
-  // .then((res) => res.json())
-  // .then((data) => console.log(data));
+  const appRouter = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/detail/:id",
+      element: <DetailPage />,
+    },
+  ]);
+
   return (
-    <div className="text-red-600">
-      Hello
+    <div className="scroll-smooth">
+      <RouterProvider router={appRouter} />
     </div>
   );
 }
