@@ -1,6 +1,8 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./components/Home";
 import DetailPage from "./components/DetailPage";
+import FormModal from "./components/FormModal";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -16,7 +18,20 @@ function App() {
 
   return (
     <div className="scroll-smooth">
+      <div>
+        <Toaster
+          position="top-right"
+          toastOptions={{
+            success: {
+              theme: {
+                primary: "#4aed88",
+              },
+            },
+          }}
+        ></Toaster>
+      </div>
       <RouterProvider router={appRouter} />
+    
     </div>
   );
 }

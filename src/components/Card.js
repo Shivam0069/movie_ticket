@@ -3,11 +3,11 @@ import { CiStar } from "react-icons/ci";
 import { Link } from "react-router-dom";
 export default function Card({ movie }) {
   return (
-    <div className="rounded-md cursor-pointer  w-[222px]">
+    <div className="rounded-md cursor-pointer  w-[222px] group">
       <Link to={`/detail/${movie.show.id}`}>
-        <div className="relative w-full h-[378px]  ">
+        <div className="relative w-full h-[378px] hover:scale-105 transition-transform duration-200 ">
           <img
-            className="h-full w-full object-cover rounded-md"
+            className="h-full w-full object-cover rounded-md hover:brightness-110"
             src={
               movie.show.image
                 ? movie.show.image.medium
@@ -45,7 +45,7 @@ export default function Card({ movie }) {
             </div>
           </div>
         </div>
-        <div className="text-lg mt-1 font-semibold">{movie.show.name}</div>
+        <div className="text-lg mt-1 font-semibold group-hover:text-blue-400">{movie.show.name}</div>
         <div className="flex text-gray-500">
           {movie.show.genres?.map((genre, index, array) => (
             <React.Fragment key={genre}>
