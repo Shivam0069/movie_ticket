@@ -22,7 +22,7 @@ export default function DetailPage() {
       <div className="max-w-4xl ml-10 mt-10">
         <h1 className="mb-3 font-bold text-xl">About the movie</h1>
         <div
-          className="text-gray-500"
+          className="text-gray-600"
           dangerouslySetInnerHTML={createMarkup(movie[0]?.show?.summary)}
         />
       </div>

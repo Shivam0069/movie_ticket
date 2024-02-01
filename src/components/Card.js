@@ -1,9 +1,16 @@
 import React from "react";
 import { CiStar } from "react-icons/ci";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 export default function Card({ movie }) {
   return (
-    <div className="rounded-md cursor-pointer  w-[222px] group">
+    <div
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      className="rounded-md cursor-pointer  w-[222px] group"
+    >
       <Link to={`/detail/${movie.show.id}`}>
         <div className="relative w-full h-[378px] hover:scale-105 transition-transform duration-200 ">
           <img
@@ -45,7 +52,9 @@ export default function Card({ movie }) {
             </div>
           </div>
         </div>
-        <div className="text-lg mt-1 font-semibold group-hover:text-blue-400">{movie.show.name}</div>
+        <div className="text-lg mt-1 font-semibold group-hover:text-blue-400">
+          {movie.show.name}
+        </div>
         <div className="flex text-gray-500">
           {movie.show.genres?.map((genre, index, array) => (
             <React.Fragment key={genre}>

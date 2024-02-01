@@ -45,9 +45,9 @@ export default function FormModal({ movie }) {
           onRequestClose={() => {
             dispatch(setIsOpen(false));
           }}
-          className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 max-w-lg w-[90%]   p-6 absolute top-56 left-[50%] translate-x-[-50%] bg-white border-2 rounded-md shadow-md"
+          className="bg-gradient-to-b from-black via-black to-gray-800 max-w-lg w-[90%]   p-6 absolute top-56 left-[50%] translate-x-[-50%] bg-white border-2 rounded-md shadow-md"
         >
-          <form className="flex flex-col space-y-6">
+          <form className="flex flex-col space-y-6 text-white">
             <div>
               <span className="text-xl font-bold">Movie</span> :{" "}
               <span className="text-xl font-semibold">{movie.show.name}</span>
@@ -56,7 +56,8 @@ export default function FormModal({ movie }) {
             <div className="flex text-xl items-center">
               <h1 className="text-lg">Name :</h1>
               <input
-                className="focus:outline-none border rounded-full ml-2 pl-3 pr-3 text-sm py-2 w-64 focus:border-blue-400"
+              placeholder="Enter Your Name"
+                className="focus:outline-none border text-black rounded-full ml-2 pl-3 pr-3 text-sm py-2 w-64 focus:border-blue-400"
                 type="text"
                 ref={usernameRef}
               />
@@ -64,7 +65,8 @@ export default function FormModal({ movie }) {
             <div className="flex text-xl items-center">
               <h1 className="text-lg">Email :</h1>
               <input
-                className="focus:outline-none border rounded-full ml-3 pl-3 pr-3 text-sm py-2 w-64 focus:border-blue-400"
+              placeholder="Enter Your Email"
+                className="focus:outline-none border text-black rounded-full ml-3 pl-3 pr-3 text-sm py-2 w-64 focus:border-blue-400"
                 type="email"
                 ref={emailRef}
               />
