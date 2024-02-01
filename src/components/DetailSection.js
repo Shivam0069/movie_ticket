@@ -14,7 +14,7 @@ export default function DetailSection() {
   console.log(movie);
   const containerStyle = {
     backgroundImage:
-      "url(https://spotlightonline.co/wp-content/uploads/2017/03/cinema_projector.jpg)",
+      "url(https://img.freepik.com/free-photo/assortment-cinema-elements-red-background-with-copy-space_23-2148457848.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706659200&semt=sph)",
     backgroundSize: "100% auto",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",

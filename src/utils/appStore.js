@@ -1,10 +1,25 @@
-import { configureStore } from "@reduxjs/toolkit";
-import movieSlice from "./movieSlice";
+import movieReducer from "./movieSlice";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import storage from "redux-persist/lib/storage";
+import { persistReducer } from "redux-persist";
+import persistStore from "redux-persist/es/persistStore";
+const persistConfig = {
+  key: "root",
 
-const appStore = configureStore({
-  reducer: {
-    movies: movieSlice,
-  },
+  storage,
+};
+
+const reducer = combineReducers({
+  movies: movieReducer,
 });
+const persistedReducer = persistReducer(persistConfig, reducer);
 
-export default appStore;
+const store = configureStore({
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
+});
+export const persistor = persistStore(store);
+export default store;
